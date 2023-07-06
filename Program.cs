@@ -18,72 +18,6 @@ namespace OOPInCSharp
     {
         decimal CalculateSalary();
     }
-
-    //public abstract class Employee
-    //{
-    //    public string Name { get; set; }
-    //    public Designation Designation { get; set; }
-
-    //    public Employee(string name, Designation designation)
-    //    {
-    //        Name = name;
-    //        Designation = designation;
-    //    }
-
-    //    public virtual decimal CalculateSalary()
-    //    {
-    //        return 0;
-    //    }
-    //}
-
-    //public class Manager : Employee, ISalaryCalculator
-    //{
-    //    public Manager(string name) : base(name, Designation.Manager)
-    //    {
-    //    }
-
-    //    public override decimal CalculateSalary()
-    //    {
-    //        return 5000;
-    //    }
-    //}
-
-    //public class Developer : Employee, ISalaryCalculator
-    //{
-    //    public Developer(string name) : base(name, Designation.Developer)
-    //    {
-    //    }
-
-    //    public override decimal CalculateSalary()
-    //    {
-    //        return 4000;
-    //    }
-    //}
-
-    //public class Tester : Employee, ISalaryCalculator
-    //{
-    //    public Tester(string name) : base(name, Designation.Tester)
-    //    {
-    //    }
-
-    //    public override decimal CalculateSalary()
-    //    {
-    //        return 3500;
-    //    }
-    //}
-
-    //public class Analyst : Employee, ISalaryCalculator
-    //{
-    //    public Analyst(string name) : base(name, Designation.Analyst)
-    //    {
-    //    }
-
-    //    public override decimal CalculateSalary()
-    //    {
-    //        return 4500;
-    //    }
-    //}
-
     public abstract class Employee<T> : ISalaryCalculator where T : struct, Enum
     {
         public string Name { get; set; }
@@ -402,55 +336,6 @@ namespace OOPInCSharp
             }
         }
 
-        //private static void AddEmployee()
-        //{
-        //    Console.WriteLine("Enter the employee name:");
-        //    string name = Console.ReadLine();
-
-        //    Console.WriteLine("Select the employee designation:");
-        //    for (int i = 0; i < Enum.GetNames(typeof(Designation)).Length; i++)
-        //    {
-        //        Console.WriteLine($"{i + 1}. {Enum.GetNames(typeof(Designation))[i]}");
-        //    }
-        //    int designationIndex = Convert.ToInt32(Console.ReadLine()) - 1;
-        //    if (designationIndex < 0 || designationIndex >= Enum.GetNames(typeof(Designation)).Length)
-        //    {
-        //        Console.WriteLine("Invalid designation!");
-        //        return;
-        //    }
-        //    Designation designation = (Designation)designationIndex;
-
-        //    Employee employee = CreateEmployee(name, designation);
-        //    if (employee != null)
-        //    {
-        //        employees.Add(employee);
-        //        DatabaseHelper.SaveEmployeeData(employee);
-        //        Console.WriteLine("Employee added successfully!");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Invalid employee designation!");
-        //    }
-        //}
-
-        //private static Employee CreateEmployee(string name, Designation designation)
-        //{
-        //    switch (designation)
-        //    {
-        //        case Designation.Manager:
-        //            return new Manager(name);
-        //        case Designation.Developer:
-        //            return new Developer(name);
-        //        case Designation.Tester:
-        //            return new Tester(name);
-        //        case Designation.Analyst:
-        //            return new Analyst(name);
-        //        default:
-        //            throw new ArgumentException("Invalid employee designation");
-        //    }
-        //}
-
-
         private static void AddEmployee()
         {
             Console.WriteLine("Enter the employee name:");
@@ -563,9 +448,5 @@ namespace OOPInCSharp
             }
         }
 
-        //private static void LoadEmployeesFromDatabase()
-        //{
-        //    employees = DatabaseHelper.LoadEmployeeData();
-        //}
     }
 }
