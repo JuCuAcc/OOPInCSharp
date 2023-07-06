@@ -389,6 +389,12 @@ namespace OOPInCSharp
             employees = DatabaseHelper.LoadEmployeeData<Designation>();
         }
 
+
+        //private static async Task LoadEmployeesFromDatabase()
+        //{
+        //    employees = await DatabaseHelper.LoadEmployeeData<Designation>();
+        //}
+
         private static void CalculateSalary()
         {
             Console.WriteLine("Enter the employee name:");
